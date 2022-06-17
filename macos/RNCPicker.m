@@ -55,18 +55,17 @@
         index++;
     }
 
+    [self selectItemAtIndex:_selectedIndex];
     [self setNeedsLayout:true];
 }
 
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex
 {
-  if (_selectedIndex != selectedIndex) {
     _selectedIndex = selectedIndex;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self selectItemAtIndex:selectedIndex];
     });
-  }
 }
 
 

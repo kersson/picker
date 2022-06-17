@@ -87,7 +87,7 @@ class PickerMacOS extends React.Component<Props, State> {
   static Item: typeof PickerMacOSItem = PickerMacOSItem;
 
   static getDerivedStateFromProps(props: Props): State {
-    let selectedIndex = 0;
+    let selectedIndex = -1;
     const items = [];
     React.Children.toArray(props.children).forEach(function (child, index) {
       if (child.props.value === props.selectedValue) {
